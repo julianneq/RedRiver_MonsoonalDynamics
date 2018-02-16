@@ -109,65 +109,8 @@ def makeFigure8(result1, result2, paramBounds):
     fig.subplots_adjust(bottom=0.25)
     fig.legend(handles, labels, loc='lower center',ncol=6,fontsize=22,frameon=True)
     fig.set_size_inches([24, 12.55])
-    fig.savefig('Figure11.pdf')
+    fig.savefig('Figure8.pdf')
     fig.clf()
-    
-    # make yr-by-yr figures for GIFs
-    for j in range(2099-1976+1-30+1):
-        fig = plt.figure()
-        for n in range(2):
-            ax = fig.add_subplot(1,2,n+1)
-            ax = ShadeBoundaries(ax, x_min, x_max, y_min[n], y_max[n], result1, result2, paramBounds, [mu_min, mu_max], n)
-            for i in range(numModels):
-                # find marker for model j
-                for k, name in enumerate(modelNames):
-                    if name in models[i]:
-                        marker=markers[k]
-                        label=name
-                        
-                if marker == '+' or marker == '|' or marker == '_' or marker == 'x':
-                    linewidth=2
-                else:
-                    linewidth=1
-                        
-                for k, rcp in enumerate(RCPs):
-                    if rcp in models[i]:
-                        color = colors[k]
-                        
-                if n == 0:
-                    ax.scatter(multipliers[i,j,0],multipliers[i,j,1],edgecolor=color,\
-                        facecolor=color,marker=marker,label=label,s=100,linewidth=2)
-                    ax.set_ylim([C1_min,C1_max])
-                else:
-                    ax.scatter(multipliers[i,j,0],multipliers[i,j,2],edgecolor=color,\
-                        facecolor=color,marker=marker,label=label,s=100,linewidth=2)
-                    ax.set_ylim([std_min,std_max])
-                    
-            plt.scatter(1,1,edgecolor='k',facecolor='w',s=100,linewidth=2,label='Base SOW')
-                
-            if n == 0:
-                ax.set_ylabel(r'$m_{C_1}$', fontsize=36)
-            else:
-                ax.legend(boxes,['RCP 2.6','RCP 4.5','RCP 6.0','RCP 8.5'],\
-                    loc='upper right',ncol=1, fontsize=26,frameon=True)
-                ax.set_ylabel(r'$m_{\sigma}$', fontsize=36)
-            
-            ax.tick_params(axis='both',labelsize=26)
-            ax.set_xlabel(r'$m_{\mu}$',fontsize=36)
-            #ax.set_title(str(1976+j) + '-' + str(1976+30+j-1),fontsize=22)
-            ax.set_xlim([mu_min,mu_max])
-            
-        #handles, labels = plt.gca().get_legend_handles_labels()
-        #labels, ids = np.unique(labels, return_index=True)
-        #handles = [handles[i] for i in ids]    
-        fig.subplots_adjust(bottom=0.3)
-        #legend2 = fig.legend(handles, labels, loc='lower center',ncol=6, fontsize=26, \
-        #    title='Model', frameon=True)
-        #plt.setp(legend2.get_title(), fontsize=30)
-        fig.suptitle(str(1976+j) + '-' + str(1976+30+j-1), fontsize=30)
-        fig.set_size_inches([24, 12.55])
-        fig.savefig('GIF_PNGs/Both/' + str(1976+j) + '-' + str(1976+30+j-1) + '_Q.png')
-        fig.clf()
         
     return None
     
