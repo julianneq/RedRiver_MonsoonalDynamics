@@ -7,15 +7,13 @@ def makeFigure8(result1, result2, paramBounds):
 
     modelNames = ['ACCESS1','bcc-csm1','BNU-ESM','CanESM2','CCSM4','CESM1','CMCC','CNRM-CM5',\
         'CSIRO','GFDL','GISS','HadGEM2','inmcm4','IPSL','MIROC','MPI-ESM',\
-        'MRI','NorESM1']#,'EC-EARTH','FGOALS']
-    markers = ['o','v','^','<','>','8','s','p','+','*','h','H','x','D','d','|','_','.']#,\
-        #'1','2']
+        'MRI','NorESM1']
+    markers = ['o','v','^','<','>','8','s','p','+','*','h','H','x','D','d','|','_','.']
         
     RCPs = ['rcp26','rcp45','rcp60','rcp85']
     colors = ['#fecc5c','#fd8d3c','#f03b20','#bd0026']
     
-    models = [f for f in os.listdir('./../Multipliers') if f[-17::] == '_Qmultipliers.txt' \
-           and f != 'Historical_Qmultipliers.txt']
+    models = [f for f in os.listdir('./../Multipliers') if f[-17::] == '_Qmultipliers.txt']
     numModels = len(models)
     
     # load time series of multipliers for all climate models
