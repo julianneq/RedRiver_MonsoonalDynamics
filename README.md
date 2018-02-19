@@ -9,3 +9,5 @@ Figure 1 is the same as Figure 2 from [Quinn et al. (2017)](http://onlinelibrary
 Generating Figures 2-4, 6c & 6f and S2-S4 requires reading in governmental data on streamflow and demand in the basin. This data cannot be made public, and consequently the code and data for these figures is not provided in this repository.
 
 The code used to generate all other figures can be found within the `PaperFigures` directory. All other directories contain modeling results read in by this code.
+
+Licensed under the GNU Lesser General Public License.
