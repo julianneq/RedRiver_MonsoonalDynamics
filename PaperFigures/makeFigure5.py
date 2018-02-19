@@ -58,18 +58,9 @@ def makeFigure5():
         
 def calcRobustness(name):
     formulation = getFormulations(name, 1000, 5)
-    
-    TestPoints = np.loadtxt('LHsamples.txt')
-    BasePoints = np.array([1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0])
     thresholds = np.array([2.15, -25, 350])
-    paramBounds = np.loadtxt('uncertain_params.txt',usecols=[1,2])
     
-    # normalize TestPoints and BasePoints on [0,1] for consistent dimensions across objectives
-    for i in range(len(BasePoints)):
-        BasePoints[i] = (BasePoints[i] - paramBounds[i,0])/(paramBounds[i,1] - paramBounds[i,0])
-        TestPoints[:,i] = (TestPoints[:,i] - paramBounds[i,0])/(paramBounds[i,1] - paramBounds[i,0])
-    
-    # say what the order of these objectives is
+    # calculate satisficing Type I metric
     formulation.Satisfy1 = SatisfyTypeI(formulation.MORDMobjs, thresholds)
         
     # write output to file
@@ -151,7 +142,6 @@ def parallel_coordinate(fig, ax1, table, shade, mins, maxs, cbar, \
     for k, solution in enumerate(scaled.iterrows()):
         ys = solution[1]
         xs = range(len(ys))
-        #ax1.plot(xs, ys, c='#3182bd', linewidth=2)#, alpha=0.5)
         if k not in indices:
             ax1.plot(xs, ys, c=cmap(newShade[index]), linewidth=2, alpha=0.5)
         else:
