@@ -85,44 +85,6 @@ def fitLogit(dta, variable, threshold, predictors):
     
     return result
     
-def getSamplePts(result, base):
-    # parametric equations of line perpendicular to dividing line [b0 + b1x1 + b2x2 + b3x3 = ln(p/(1-p))]
-    # and passing through (0.5,0.5,0.5):
-    # x1 = 1 + b1*t
-    # x2 = 1 + b2*t
-    # x3 = 1 + b3*t
-
-    # minimum number of slope units above (1,1,1) to hit max x1, max x2 or max x3
-    t1 = np.abs((1.0 - base[0])/result.params[1])
-    t2 = np.abs((1.0 - base[1])/result.params[2])
-    t3 = np.abs((1.0 - base[2])/result.params[3])
-    t = np.min([t1, t2, t3])
-    
-    x1s = []
-    x2s = []
-    x3s = []
-    for i in range(2):
-        x1s.extend([base[0] + result.params[1]*t*(i/2 - (i-1))])
-        x2s.extend([base[1] + result.params[2]*t*(i/2 - (i-1))])
-        x3s.extend([base[2] + result.params[3]*t*(i/2 - (i-1))])
-        
-    x1s.extend([base[0]])
-    x2s.extend([base[1]])
-    x3s.extend([base[2]])
-    
-    # minimum number of slope units below (1,1,1) to hit min x1, max x2 or max x3
-    t1 = np.abs(-base[0]/result.params[1])
-    t2 = np.abs(-base[1]/result.params[2])
-    t3 = np.abs(-base[2]/result.params[3])
-    t = np.min([t1, t2, t3])
-    
-    for i in range(2):
-        x1s.extend([base[0] - result.params[1]*t*(0.5+i/2)])
-        x2s.extend([base[1] - result.params[2]*t*(0.5+i/2)])
-        x3s.extend([base[2] - result.params[3]*t*(0.5+i/2)])
-    
-    return x1s, x2s, x3s
-    
 def plotContourMap(ax, result, constant, LHsamples, dta, contour_cmap, dot_cmap, xgrid, ygrid, levels, \
     xvar, yvar, xlabel, ylabel, xticks, yticks, xticklabels, yticklabels, base):
     
