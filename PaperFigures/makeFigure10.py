@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import seaborn.apionly as sns
 import os
 
-def makeFigure8(result1, result2, paramBounds):
+def makeFigure10(result1, result2, paramBounds):
 
     modelNames = ['ACCESS1','bcc-csm1','BNU-ESM','CanESM2','CCSM4','CESM1','CMCC','CNRM-CM5',\
         'CSIRO','GFDL','GISS','HadGEM2','inmcm4','IPSL','MIROC','MPI-ESM',\
