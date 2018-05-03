@@ -19,7 +19,7 @@ class Formulation:
 def makeFigure6():
     new_WP1 = calcRobustness('new_WP1')
     
-    cbar = 'Blues'
+    cbar = 'inferno'
     labels = [r'$J_{Flood}$' + '\n(m above 11.25 m)',\
         r'$J_{Hydro}$' + '\n(Gwh/day)',\
         r'$J_{Max Def}$' + '\n' + r'$\mathregular{(m^3/s)}$']
