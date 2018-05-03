@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
 
-def makeFigure7(formulation, thresholds, paramBounds):
+def makeFigure7abde(formulation, thresholds, paramBounds):
 
     # uncertain factors
     LHsamples = pd.read_csv('LHsamples.txt', sep=' ', \
