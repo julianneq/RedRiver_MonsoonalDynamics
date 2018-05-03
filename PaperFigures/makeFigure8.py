@@ -9,7 +9,7 @@ class Solution:
         self.Hydro = None
         self.Deficit = None
         
-def makeFigure6ghij(formulation, LHsamples, paramBounds, normSamples, thresholds):
+def makeFigure8(formulation, LHsamples, paramBounds, normSamples, thresholds):
     # scenarios for event plots
     scenarios = ['Mean','C1','Std','All3_Flood']
     titles = ['SOW Trajectory 1','SOW Trajectory 2','SOW Trajectory 3','SOW Trajectory 4']
