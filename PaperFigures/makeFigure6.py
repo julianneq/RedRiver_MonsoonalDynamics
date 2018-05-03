@@ -16,7 +16,7 @@ class Formulation:
         self.Satisfy1 = None
         self.bestIndices = None
         
-def makeFigure5():
+def makeFigure6():
     new_WP1 = calcRobustness('new_WP1')
     
     cbar = 'Blues'
