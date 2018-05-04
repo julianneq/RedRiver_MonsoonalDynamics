@@ -180,7 +180,10 @@ def plotContourMap(dots, ax, result, constant, LHsamples, dta, contour_cmap, dot
     if dots == True:
         # plot point varying only one dimension
         ax.scatter([base[0]]*len(ypts), ypts, c='k', marker='o', s=50)
-        ax.scatter(xpts, [base[1]]*len(xpts), c='k', marker='o', s=50)
+        if constant == 'x3': # vary 2nd dimension only [base[1]]
+            ax.scatter(xpts, [base[1]]*len(xpts), c='k', marker='o', s=50)
+        elif constant == 'x2': # vary 3rd dimension only [base[2]]
+            ax.scatter(xpts, [base[2]]*len(xpts), c='k', marker='o', s=50)
         
         # plot points in direction of greatest variability    
         ax.scatter(sampleXs, sampleYs, marker='o', c='k', s=50)
