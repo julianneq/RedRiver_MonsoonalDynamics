@@ -148,16 +148,16 @@ def getSamplePts(result, base):
 def plotContourMap(dots, ax, result, constant, LHsamples, dta, contour_cmap, dot_cmap, xgrid, ygrid, levels, \
     xpts, ypts, sampleXs, sampleYs, xvar, yvar, xlabel, ylabel, xticks, yticks, xticklabels, yticklabels, base):
     
-    # find probability of success for x=xgrid, y1var=ygrid and y2var=1
+    # find probability of success for x=xgrid, y=ygrid
     X, Y = np.meshgrid(xgrid, ygrid)
     x = X.flatten()
     y = Y.flatten()
     if constant == 'x3': # 3rd predictor held constant at base value
         grid = np.column_stack([np.ones(len(x)),x,y,np.ones(len(x))*base[2]])
     elif constant == 'x2': # 2nd predictor held constant at base value
-        grid = np.column_stack([np.ones(len(x)),x,np.ones(len(x))*base[2],y])
+        grid = np.column_stack([np.ones(len(x)),x,np.ones(len(x))*base[1],y])
     else: # 1st predictor held constant at base value
-        grid = np.column_stack([np.ones(len(x)),np.ones(len(x))*base[2],x,y])
+        grid = np.column_stack([np.ones(len(x)),np.ones(len(x))*base[0],x,y])
         
     z = result.predict(grid)
     Z = np.reshape(z, np.shape(X))
