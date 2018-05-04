@@ -2,10 +2,10 @@ from __future__ import division
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
-from makeFigure6abde import makeFigure6abde
-from makeFigure6ghij import makeFigure6ghij
-from makeFigure7 import makeFigure7
+from makeFigure7abde import makeFigure7abde
 from makeFigure8 import makeFigure8
+from makeFigure9 import makeFigure9
+from makeFigure10 import makeFigure10
 
 class Soln:
     def __init__(self):
@@ -35,10 +35,10 @@ def makeDotPlots():
     # specify primary parameters of importance for each objective
     thresholds = [2.15, -25, 350]
     
-    # make Figures 6 and 7
-    makeFigure6abde(new_WP1, thresholds, paramBounds)
-    makeFigure6ghij(new_WP1, LHsamples, paramBounds, normSamples, thresholds)
-    makeFigure7(new_WP1, thresholds, paramBounds)
+    # make Figures 7-9
+    makeFigure7abde(new_WP1, thresholds, paramBounds)
+    makeFigure8(new_WP1, LHsamples, paramBounds, normSamples, thresholds)
+    makeFigure9(new_WP1, thresholds, paramBounds)
     
     # find boundary equations for compromise solution
     LHsamples_df = pd.read_csv('LHsamples.txt', sep=' ', \
@@ -53,8 +53,8 @@ def makeDotPlots():
     result1 = fitLogit(dta, dta.Flood, thresholds[0], predictors)
     result2 = fitLogit(dta, dta.Hydro, thresholds[1], predictors)
     
-    # make Figure 8
-    makeFigure8(result1, result2, paramBounds)
+    # make Figure 10
+    makeFigure10(result1, result2, paramBounds)
     
     return None
     
