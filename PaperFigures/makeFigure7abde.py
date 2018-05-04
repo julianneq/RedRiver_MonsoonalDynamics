@@ -165,7 +165,7 @@ def plotContourMap(dots, ax, result, constant, LHsamples, dta, contour_cmap, dot
     contourset = ax.contourf(X, Y, Z, levels, cmap=contour_cmap)
     if dots == True:
         ax.scatter(LHsamples[xvar].values,LHsamples[yvar].values, \
-            facecolor=dta['Success'].values,edgecolor='none',cmap=dot_cmap)
+            c=dta['Success'].values,edgecolor='none',cmap=dot_cmap)
         
     ax.set_xlim(np.min(X),np.max(X))
     ax.set_ylim(np.min(Y),np.max(Y))
