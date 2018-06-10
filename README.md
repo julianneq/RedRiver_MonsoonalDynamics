@@ -2,7 +2,7 @@
 
 This repository contains the code and results used to generate Figures 6-10 and S1 of the following paper:
 
-Quinn, J.D., Reed, P.M., Giuliani, M., Castelletti, A., Oyler, J.W., and Nicholas, R.E. (Accepted). Exploring how changing monsoonal dynamics and human pressures challenge multi-reservoir management for flood protection, hydropower production and agricultural water supply. doi: [10.1029/2018WR022743](https://doi.org/10.1029/2018WR022743)
+Quinn, J.D., Reed, P.M., Giuliani, M., Castelletti, A., Oyler, J.W., and Nicholas, R.E. (Accepted). Exploring how changing monsoonal dynamics and human pressures challenge multi-reservoir management for flood protection, hydropower production and agricultural water supply. *Water Resources Research*. doi: [10.1029/2018WR022743](https://doi.org/10.1029/2018WR022743)
 
 Figure 1 is the same as Figure 2 from [Quinn et al. (2017)](http://onlinelibrary.wiley.com/doi/10.1002/2017WR020524/full), and the code used to make it can be found in the following repository: https://github.com/julianneq/RedRiver_RivalFramings.
 
