@@ -61,7 +61,7 @@ def makeFigure9(formulation, thresholds, paramBounds):
         'mu', 'ag', r'$m_{\mu}$', r'$m_{ag}$', np.arange(0.1,0.95,0.2), np.arange(0.1,0.95,0.2), \
         ['0.96','0.98','1.00','1.02','1.04'], ['0.6','0.8','1.0','1.2','1.4'], [0.5,0.5,0.5], False)
     ax = fig.add_subplot(2,2,4)
-    plotContourMap(ax, result3, 'x2', LHsamples, dta, class_cmap, dot_cmap, xgrid, ygrid, levels, \
+    plotContourMap(ax, result3, 'x1', LHsamples, dta, class_cmap, dot_cmap, xgrid, ygrid, levels, \
         'ag', 'other', r'$m_{ag}$', r'$m_{o}$', np.arange(0.1,0.95,0.2), np.arange(0.25/4.5,4.3/4.5,1/4.5), \
         ['0.6','0.8','1.0','1.2','1.4'], ['0.75','1.75','2.75','3.75','4.75'], [0.5,0.5,0.5], True)
     
