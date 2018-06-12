@@ -107,7 +107,7 @@ def makeFigure10(result1, result2, paramBounds):
     fig.subplots_adjust(bottom=0.25)
     fig.legend(handles, labels, loc='lower center',ncol=6,fontsize=22,frameon=True)
     fig.set_size_inches([24, 12.55])
-    fig.savefig('Figure8.pdf')
+    fig.savefig('Figure10.pdf')
     fig.clf()
         
     return None
