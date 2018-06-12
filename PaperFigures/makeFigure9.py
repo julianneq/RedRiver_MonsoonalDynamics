@@ -67,7 +67,7 @@ def makeFigure9(formulation, thresholds, paramBounds):
     
     fig.subplots_adjust(wspace=0.3)
     fig.set_size_inches([14.5, 12.3])
-    fig.savefig('Figure7.pdf')
+    fig.savefig('Figure9.pdf')
     fig.clf()
         
     return None
