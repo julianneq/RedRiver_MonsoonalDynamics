@@ -51,7 +51,7 @@ def makeFigure6():
         newlabels, precision, cbar_axes, new_WP1.bestIndices)
         
     fig.set_size_inches([8.725, 7.7375])
-    fig.savefig('Figure5.pdf')
+    fig.savefig('Figure6.pdf')
     fig.clf()
     
     return None
