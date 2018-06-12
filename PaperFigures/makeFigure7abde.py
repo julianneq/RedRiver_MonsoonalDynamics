@@ -89,7 +89,7 @@ def makeFigure7abde(formulation, thresholds, paramBounds):
     yticklabels = cbar.ax.get_yticklabels()
     cbar.ax.set_yticklabels(yticklabels,fontsize=18)
     fig.set_size_inches([12.67, 10.61])
-    fig.savefig('Figure6abde.pdf')
+    fig.savefig('Figure7abde.pdf')
     fig.clf()
         
     return None
