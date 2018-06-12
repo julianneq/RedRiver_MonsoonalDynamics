@@ -55,7 +55,7 @@ def makeFigure8(formulation, LHsamples, paramBounds, normSamples, thresholds):
                 
     fig.suptitle('Water level time series during 100-yr flood with most robust solution for flooding',fontsize=22)
     fig.set_size_inches([26.4, 6.1])
-    fig.savefig('Figure6ghij.pdf')
+    fig.savefig('Figure8.pdf')
     fig.clf()
             
     return None
