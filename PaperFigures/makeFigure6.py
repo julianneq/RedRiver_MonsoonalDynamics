@@ -193,4 +193,4 @@ def parallel_coordinate(fig, ax1, table, shade, mins, maxs, cbar, \
     
     return ax1, fig
     
-makeFigure5()
+makeFigure6()
